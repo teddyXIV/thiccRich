@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(0.5819 0.049 303.99);
+  /* --color-secondary: oklch(0.5584 0.191 0.2596); */
+  --color-secondary: #CC3232;
+  --color-tertiary: #F4CF74;
+  --font-weight-header: 1000;
+}
+
+@layer base {
+  h1 {
+    font-size: var(--text-6xl);
+    --font-weight-extrabold: 1000;
+  }
+}
+
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 1px black;
+    text-shadow: -4px 4px 0 black;
+  }
+}
