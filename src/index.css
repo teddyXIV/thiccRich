@@ -5,8 +5,7 @@
 
 
 @theme {
-  --color-primary: oklch(0.5819 0.049 303.99);
-  /* --color-secondary: oklch(0.5584 0.191 0.2596); */
+  --color-primary: #817493;
   --color-secondary: #CC3232;
   --color-tertiary: #F4CF74;
   --font-weight-header: 1000;
