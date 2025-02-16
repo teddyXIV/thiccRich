@@ -2,11 +2,9 @@ import { useDraggable } from "@neodrag/react";
 import { useRef } from "react";
 import icons from "../icons";
 
-const DesktopIcon = ({ positions, title }) => {
+const DesktopIcon = ({ positions, title, icon }) => {
   const draggableRef = useRef(null);
   useDraggable(draggableRef);
-
-  console.log(positions)
 
   return (
     <div
@@ -18,7 +16,7 @@ const DesktopIcon = ({ positions, title }) => {
         position: "absolute"
       }}
     >
-      <img src={icons.surf} />
+      <img src={icons[icon]} />
       <h1 className="text-3xl text-red-500">{title}</h1>
     </div>
   )

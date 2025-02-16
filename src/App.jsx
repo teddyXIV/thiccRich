@@ -2,10 +2,15 @@ import './App.css'
 import DesktopIcon from './components/DesktopIcon';
 import tests from './testing/testData';
 import { useRef, useState, useEffect } from 'react';
+import icons from "./icons";
 
 function App() {
   const containerRef = useRef(null);
-  const [positions, setPositions] = useState([])
+  const [positions, setPositions] = useState([]);
+  const [randIcons, setRandIcons] = useState([]);
+
+  const iconKeys = Object.keys(icons);
+
 
   useEffect(() => {
     if (!containerRef.current || tests.length === 0) return;
@@ -19,24 +24,25 @@ function App() {
       y: Math.random() * maxY
     }));
 
-    // const newPositions = tests.map(() => ({
-    //   x: Math.floor(Math.random() * (64 - 8 + 1)) + 8,
-    //   y: Math.floor(Math.random() * (64 - 8 + 1)) + 8
-    // }));
+    const randomIcons = tests.map(() => (
+      iconKeys[Math.floor(Math.random() * iconKeys.length)]
+    ))
 
+    setRandIcons(randomIcons)
     setPositions(newPositions);
 
   }, [containerRef, tests])
 
   useEffect(() => {
-    console.log(positions)
-  }, [positions])
+    console.log("iconsKeys", iconKeys)
+    console.log("randomIcons", randIcons)
+  }, [randIcons])
 
   const albums = positions ?
     <>
       {positions.length === tests.length &&
         positions.map((pos, index) => (
-          pos && <DesktopIcon key={index} positions={pos} title={tests[index].album} />
+          pos && <DesktopIcon key={index} positions={pos} title={tests[index].album} icon={randIcons[index]} />
         ))
       }
     </>
