@@ -3,6 +3,7 @@ import DesktopIcon from './components/DesktopIcon';
 import tests from './testing/testData';
 import { useRef, useState, useEffect } from 'react';
 import icons from "./icons";
+import Window from './components/Window';
 
 function App() {
   const containerRef = useRef(null);
@@ -59,6 +60,14 @@ function App() {
           HANKSDAY.
         </p>
         {albums}
+        <Window />
+        <div className="absolute inset-x-0 bottom-0 h-12 bg-utility border-t-3 border-lightGray px-1 pb-2">
+          <button className="flex flex-row w-24 h-10 p-1 border-t-2 border-l-2 border-white border-r-2 border-b-2 border-r-black border-b-black cursor-pointer
+            active:border-t-2 active:border-l-2 active:border-black active:border-r-2 active:border-b-2 active:border-r-white active:border-b-white">
+            <img src="/H.png" alt="Henry" className="w-6 h-6 mr-2" />
+            <p>About</p>
+          </button>
+        </div>
       </div>
     </>
   )

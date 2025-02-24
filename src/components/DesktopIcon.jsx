@@ -9,7 +9,7 @@ const DesktopIcon = ({ positions, title, icon }) => {
   return (
     <div
       ref={draggableRef}
-      className="hover:bg-white/10 active:bg-white/25 w-24 p-2"
+      className="hover:bg-white/10 active:bg-white/25 w-24 p-2 cursor-pointer"
       style={{
         left: `${positions.x}px`,
         top: `${positions.y}px`,
@@ -17,7 +17,7 @@ const DesktopIcon = ({ positions, title, icon }) => {
       }}
     >
       <img src={icons[icon]} />
-      <h1 className="text-3xl text-red-500">{title}</h1>
+      <h1 className="text-base text-white text-shadow">{title}</h1>
     </div>
   )
 }

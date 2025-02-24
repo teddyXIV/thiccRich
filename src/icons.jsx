@@ -23,5 +23,5 @@ export default {
   saxophone,
   ski,
   surf,
-  trumpet
+  trumpet,
 }
